@@ -6,7 +6,7 @@ var program = require('commander');
 
 program
   .version('0.1.0')
-  .command('convert [file]', 'convert video to audio')
+  .command('cvta <input_file> <output_file>', 'converts video input into audio output')
   //.command('search [query]', 'search with optional query')
   //.command('list', 'list packages installed');
 

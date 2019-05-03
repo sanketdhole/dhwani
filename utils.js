@@ -1,24 +1,21 @@
-
-
 const extractAudio = require('ffmpeg-extract-audio');
 
-var add = async function() {
+var convertVideoToAudio = async function(input_file, output_file) {
   try {
-    const fulfilledValue =  extractAudio({
-      input: '/home/devdba/Documents/SJ Tech You Tube/microservice/Introduction_To_Microservices.mp4',
-      output: 'test.mp3'
-    }).then(function(va){
-
-    }).catch(function(err){
-      console.log(err);
+     const extractedValue =  await extractAudio({
+      input: input_file,
+      output: output_file
+    }).catch(function(error){
+      console.log('Error while converting video to audio');
+      console.log(error);
     });
-    console.log(fulfilledValue);
   }
-  catch (rejectedValue) {
-    // …
+  catch (error) {
+    console.log('Error while converting video to audio');
+    console.log(error);
   }
 }
 
 module.exports = {
-  add: add,
+  convertVideoToAudio: convertVideoToAudio,
 };
