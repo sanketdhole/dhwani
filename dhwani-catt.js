@@ -11,10 +11,10 @@ program
 
 var args = program.args;
 
-if (args.length !== 2) {
-  console.error('Input & Output file path are required');
+if (args.length !== 4) {
+  console.error('URL, API_KEY & Input file path are required');
   process.exit(1);
 }
 
 
-utils.convertVideoToAudio(args[0], args[1]);
+utils.convertAudioToText(args[0], args[1], args[2], args[3]);
