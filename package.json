@@ -22,6 +22,7 @@
   "dependencies": {
     "commander": "^2.20.0",
     "ffmpeg-extract-audio": "^1.0.2",
+    "ibm-watson": "^4.1.0",
     "lodash": "^4.17.11",
     "watson-developer-cloud": "^4.0.1"
   }
