@@ -22,6 +22,7 @@ You will be needed to follow below mentioned steps
 * Now use `npm link` to make **Dhwani** avaliable globally on your machine.
 
 #### Congratulations 👏 You can now use it!
+Type `dhwani` from you command line to know more! 
 
 ### Excuse me! I like the project. Can I also contribute to Dhwani?
 Yes, Sure! Check out Issues to get started!
