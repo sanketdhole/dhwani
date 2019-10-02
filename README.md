@@ -15,11 +15,14 @@ Also, for other features we use *IBM Watson API.* You need to have your own api 
 
 ### Alright I get that, but how do I install it?
 Now, you have got [FFmpeg](http://ffmpeg.org/) and [Node.js](https://nodejs.org/) installed. Let's go towards installation of **Dhwani**.
-You will be needed to follow below mentioned steps
-* Clone or Download the Repository to you local machine.
-* Head inside the folder using you commant line.
-* Hit `npm install` to install all Node based dependencies. Check *package.json* for more info.
-* Now use `npm link` to make **Dhwani** avaliable globally on your machine.
+One command installation can be done using the MAKEFILE in the project directory: 
+```
+make -f MAKEFILE
+```
+Otherwise, the manual approach stated below can be used
+* `cd` into the project directory
+* Run `npm install` to install all Node based dependencies. Check *package.json* for more info.
+* Run `npm link` to make **Dhwani** avaliable globally on your machine.
 
 #### Congratulations 👏 You can now use it!
 Type `dhwani` from you command line to know more! 
