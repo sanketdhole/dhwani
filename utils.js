@@ -70,7 +70,7 @@ var convertAudioToText = function(url, api_key, input_file, output_file) {
       console.log('Error while extracting text from audio');
     }
     //console.log(name, JSON.stringify(event, null, 2));
-  };
+  }
 }
 
 
