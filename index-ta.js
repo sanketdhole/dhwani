@@ -16,5 +16,4 @@ if (args.length !== 4) {
   process.exit(1);
 }
 
-
 utils.textAnalysis(args[0], args[1], args[2], args[3]);

@@ -16,5 +16,4 @@ if (args.length !== 2) {
   process.exit(1);
 }
 
-
 utils.convertVideoToAudio(args[0], args[1]);
