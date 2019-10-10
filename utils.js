@@ -6,23 +6,39 @@ const lodash = require('lodash');
 
 var extractedText = '';
 var keywords = '';
+var log = require('log');
+var chalk = require('chalk');
 
 var convertVideoToAudio = async function(input_file, output_file) {
+  log.info(`Converting video with Input file path: ${input_file}`);
+  log.info(`Converting video with Input file path: ${output_file}`);
   try {
     const extractedValue = await extractAudio({
       input: input_file,
       output: output_file,
     }).catch(function(error) {
-      console.log('Error while converting video to audio');
-      console.log(error);
+      log.error(
+        chalk.red(
+          `Error trying to extract audio from video. Details: ${error.message}`
+        )
+      );
     });
+    log.info(chalk.green('==> Successfully extracted audio.'));
   } catch (error) {
-    console.log('Error while converting video to audio');
-    console.log(error);
+    log.error(
+      chalk.red(
+        `Error trying to convert video to audio. Details: ${error.message}`
+      )
+    );
   }
 };
 
 var convertAudioToText = function(url, api_key, input_file, output_file) {
+  log.info('Converting audio to text with:');
+  log.info(`==> url: ${url}`);
+  log.info(`==> api_key: ${api_key}`);
+  log.info(`==> Input file: ${input_file}`);
+  log.info(`==> Output file: ${output_file}`);
   const speechToText = new SpeechToTextV1({
     iam_apikey: api_key,
     url: url,
@@ -38,9 +54,11 @@ var convertAudioToText = function(url, api_key, input_file, output_file) {
   };
 
   // Create the stream.
+  log.info('Creating stream...');
   var recognizeStream = speechToText.recognizeUsingWebSocket(params);
 
   // Pipe in the audio.
+  log.info('Piping in the audio...');
   fs.createReadStream(input_file).pipe(recognizeStream);
 
   // Listen for events.
@@ -62,15 +80,28 @@ var convertAudioToText = function(url, api_key, input_file, output_file) {
           extractedText += value['transcript'];
         });
       });
-      console.log(`Text extracted Successfully`);
+      log.info(chalk.green(`==> Text extracted Successfully`));
     } else if (name === 'Close:') {
-      console.log(`Writing extracted text into file ${output_file}`);
+      log.info(`Writing extracted text into Outfile file: ${output_file}`);
       fs.writeFile(output_file, extractedText, err => {
-        if (err) console.log(err);
-        console.log('Successfully written extracted text into File.');
+        if (err) {
+          log.error(
+            chalk.red(
+              `Error trying to create new file in system directory. Details: ${err.message}`
+            )
+          );
+          return;
+        }
+        log.info(
+          chalk.green(
+            '==> Successfully written extracted text into Output file.'
+          )
+        );
       });
     } else if (name === 'Error:') {
-      console.log('Error while extracting text from audio');
+      log.error(
+        chalk.red(`Error while extracting text from audio. Please try again.`)
+      );
     }
     //console.log(name, JSON.stringify(event, null, 2));
   }
@@ -82,7 +113,7 @@ var textAnalysis = function(url, api_key, input_file, output_file) {
     iam_apikey: api_key,
     url: url,
   });
-
+  log.info('Reading contents of Input file...');
   var text = fs.readFileSync(input_file).toString('utf8');
 
   const analyzeParams = {
@@ -102,15 +133,30 @@ var textAnalysis = function(url, api_key, input_file, output_file) {
       lodash.forEach(analysisResults['keywords'], function(value) {
         keywords += value['text'] + ',';
       });
-      console.log('Text Analysis completed');
+      log.info(
+        'Text Analysis complete. Now writing the file to the Output file.'
+      );
       fs.writeFile(output_file, keywords, err => {
-        if (err) console.log(err);
-        console.log('Successfully written analyzed text into File.');
+        if (err) {
+          log.error(
+            chalk.red(
+              `Error trying to create new file in system directory. Details: ${err.message}`
+            )
+          );
+          return;
+        }
+        log.info(
+          chalk.green(
+            '==> Successfully written analyzed text file into Output file.'
+          )
+        );
       });
       //console.log(JSON.stringify(analysisResults, null, 2));
     })
     .catch(err => {
-      console.log('error in text analysis:', err);
+      log.error(
+        chalk.red(`Error trying to analyze text. Details: ${err.message}`)
+      );
     });
 };
 
