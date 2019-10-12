@@ -3,10 +3,10 @@
 Dhwani is a light weight **NodeJs** based CLI tool🚀 with minimum dependencies, ease of use and lot more...
 
 ### Hey, why would I need it?
-Well on serious note we don't know. But we created on purpose to offer the following features🤗
+Well on a serious note we don't know. But we created it on purpose to offer the following features🤗
 1. Conversion from Video format to Audio Format.
-1. Conversion from Audio format to Text Format.
-1. Extraction of keywords from Text.
+2. Conversion from Audio format to Text Format.
+3. Extraction of keywords from Text.
 
 ### Ok, what do I need to use it?
 So, we didn't build it from scratch.😐 You need to have *NodeJS* to run this library😅
@@ -22,7 +22,7 @@ make -f MAKEFILE
 Otherwise, the manual approach stated below can be used:
 * `cd` into the project directory
 * Run `npm install` to install all Node based dependencies. Check *package.json* for more info.
-* Run `npm link` to make **Dhwani** avaliable globally on your machine.
+* Run `npm link` to make **Dhwani** available globally on your machine.
 
 #### Congratulations 👏 You can now use it!
 Type `dhwani` from your command line to know more! 
