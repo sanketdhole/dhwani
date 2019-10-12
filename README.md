@@ -1,20 +1,20 @@
 # Dhwani🎵
-## An Open Source CLI tool for whole bunch of stuff..
-Dhwani is a light weight **NodeJs** based CLI tool🚀 with minimum dependencies, ease of use and lot more...
+## An Open Source CLI tool for a whole bunch of stuff..
+Dhwani is a light weight **NodeJs** based CLI tool🚀 with minimum dependencies, ease of use and a whole lot more...
 
 ### Hey, why would I need it?
-Well on serious note we don't know. But we created on purpose to offer the following features🤗
-1. Conversion from Video format to Audio Format.
-1. Conversion from Audio format to Text Format.
+Well on serious note we don't know. But we created it with the purpose of offering the following features🤗
+1. Conversion from Video Format to Audio Format.
+1. Conversion from Audio Format to Text Format.
 1. Extraction of keywords from Text.
 
 ### Ok, what do I need to use it?
 So, we didn't build it from scratch.😐 You need to have *NodeJS* to run this library😅
 Along with it, you also need [FFmpeg](http://ffmpeg.org/) installed on you machine. We use it for video to audio conversion.
-Also, for other features we use *IBM Watson API.* You need to have your own API key, to use these features.
+Also, for other features we use *IBM Watson API.* You need to have your own API key to use these features.
 
 ### Alright I get that, but how do I install it?
-Now, you have got [FFmpeg](http://ffmpeg.org/) and [Node.js](https://nodejs.org/) installed. Let's go towards the installation of **Dhwani**.
+Now, you have got [FFmpeg](http://ffmpeg.org/) and [Node.js](https://nodejs.org/) installed. Let's go ahead with the installation of **Dhwani**.
 One command installation can be done using the MAKEFILE in the project directory: 
 ```
 make -f MAKEFILE
@@ -24,7 +24,7 @@ Otherwise, the manual approach stated below can be used:
 * Run `npm install` to install all Node based dependencies. Check *package.json* for more info.
 * Run `npm link` to make **Dhwani** avaliable globally on your machine.
 
-#### Congratulations 👏 You can now use it!
+#### Congratulations 👏 You can now use Dhwani!
 Type `dhwani` from your command line to know more! 
 
 ### Excuse me! I like the project. Can I also contribute to Dhwani?
