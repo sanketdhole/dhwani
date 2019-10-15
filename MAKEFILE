@@ -1,0 +1,22 @@
+PROJECT = "Dhwani"
+
+all: install link
+
+install: 
+	@echo "Installing ${PROJECT}....."; \
+	npm install
+
+link: 
+	@echo "Linking ${PROJECT} to global PATH....."; \
+	sudo npm link
+
+update: 
+	@echo "Updating ${PROJECT}....."; \
+	git pull --rebase; \
+	npm install
+
+clean : ;
+	rm -rf node_modules
+
+
+.PHONY: install clean update link

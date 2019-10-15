@@ -1,30 +1,33 @@
 # Dhwani🎵
-## An Open Source CLI tool for whole bunch of stuff..
-Dhwani is light weight **NodeJs** based CLI tool🚀 with minimum dependencies, ease of use and lot more...
+## An Open Source CLI tool for a whole bunch of stuff..
+Dhwani is a light-weight **NodeJs**-based CLI tool 🚀 with minimal dependencies, ease of use, and a whole lot more...
 
 ### Hey, why would I need it?
-Well on serious note we don't know. But we created on purpose to offering following features🤗
-1. Converstion from Video format to Audio Format.
-1. Converstion from Audio format to Text Format.
-1. Extraction of keywords from Text.
+Well on serious note we don't know. But we created it with the purpose of offering the following features 🤗
+1. Conversion from Video format to Audio Format.
+2. Conversion from Audio format to Text Format.
+3. Extraction of keywords from Text.
 
-### Ok, what I need to use it?
-So, we didn't build it from scratch.😐 You need to have *NodeJS* to run this library😅
-Along with it, you also need [FFmpeg](http://ffmpeg.org/) installed on you machine. We use it for video to audio conversion.
-Also, for other features we use *IBM Watson API.* You need to have your own api key, to use these features.
+### Ok, what do I need to use it?
+So, we didn't build it from scratch 😐. You need to have *NodeJS* to run this library 😅.  
+Along with it, you also need [FFmpeg](http://ffmpeg.org/) installed on you machine. We use it for video to audio conversion.  
+Also, for other features we use *IBM Watson API.* You need to have your own API key to use these features.
 
 ### Alright I get that, but how do I install it?
-Now, you have got [FFmpeg](http://ffmpeg.org/) and [Node.js](https://nodejs.org/) installed. Let's go towards installation of **Dhwani**.
-You will be needed to follow below mentioned steps
-* Clone or Download the Repository to you local machine.
-* Head inside the folder using you commant line.
-* Hit `npm install` to install all Node based dependencies. Check *package.json* for more info.
-* Now use `npm link` to make **Dhwani** avaliable globally on your machine.
+Now you have [FFmpeg](http://ffmpeg.org/) and [Node.js](https://nodejs.org/) installed. Let's go ahead with the installation of **Dhwani**.  
+A one-command installation can be done using the MAKEFILE in the project directory: 
+```
+make -f MAKEFILE
+```
+Otherwise, this manual approach can be used:
+* `cd` into the project directory
+* Run `npm install` to install all Node-based dependencies. Check *package.json* for more info.
+* Run `npm link` to make **Dhwani** available globally on your machine.
 
-#### Congratulations 👏 You can now use it!
-Type `dhwani` from you command line to know more! 
+#### Congratulations 👏 You can now use Dhwani!
+Type `dhwani` into your command line to learn more! 
 
 ### Excuse me! I like the project. Can I also contribute to Dhwani?
-Yes, Sure! Check out Issues to get started!
+Yes, Sure! Check out [Issues](https://github.com/sagar-jadhav/dhwani/issues) to get started!
 
 [![Open Source Helpers](https://www.codetriage.com/sagar-jadhav/dhwani/badges/users.svg)](https://www.codetriage.com/sagar-jadhav/dhwani)
